@@ -8,14 +8,13 @@
     "start": "node script.js"
   },
   "repository": {
-    "type": "git", 
-    "url": "git+https://github.com/Lunnatika/Pre-entrega.git",
-    "module"
+    "type": "git",
+    "url": "git+https://github.com/Lunnatika/Pre-entrega.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/Lunnatika/Pre-entrega/issues"
   },

@@ -11,19 +11,19 @@ async function main() {
     // ===== INICIA LOGICA PRINCIPAL =====
 
     // ================= GET =================
-    if (metodo === "GET") {
-      const response = await fetch(BASE_URL + recurso);
-      const data = await response.json();
+    if (metodo === "GET") { 
+      const response = await fetch(BASE_URL + recurso); // hacemos la peticion a la API
+      const data = await response.json();   // convertimos la respuesta a JSON
 
       // mostramos solo id, title y price
       if (Array.isArray(data)) {
-        const tabla = data.map(p => ({
+        const tabla = data.map(p => ({   // mapeamos cada producto a un nuevo objeto con solo los campos que nos interesan
           id: p.id,
           title: p.title,
           price: p.price
         }));
 
-        console.table(tabla);
+        console.table(tabla);  // mostramos la tabla con los productos
       } else {
         console.table([{
           id: data.id,
@@ -34,44 +34,44 @@ async function main() {
     }
 
     // ================= POST =================
-    else if (metodo === "POST") {
-      const [title, price, category] = extra;
+    else if (metodo === "POST") {  // para crear un nuevo producto necesitamos title, price y category
+      const [title, price, category] = extra; // extra es un array con los datos adicionales, los asignamos a variables
 
-      const response = await fetch(BASE_URL + recurso, {
+      const response = await fetch(BASE_URL + recurso, { // hacemos la peticion a la API para crear un nuevo producto
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json"  // indicamos que el cuerpo de la petición es JSON
         },
-        body: JSON.stringify({
+        body: JSON.stringify({  // convertimos el objeto a JSON para enviarlo en el cuerpo de la petición
           title,
           price: Number(price),
           category
         })
-      });
+      }); 
 
-      const data = await response.json();
-      console.log("Producto creado:", data.id);
+      const data = await response.json(); // convertimos la respuesta a JSON
+      console.log("Producto creado:", data.id); // mostramos el id del nuevo producto creado
     }
 
     // ================= DELETE =================
     else if (metodo === "DELETE") {
-      const response = await fetch(BASE_URL + recurso, {
-        method: "DELETE"
+      const response = await fetch(BASE_URL + recurso, {   // hacemos la peticion a la API para eliminar un producto
+        method: "DELETE"  // indicamos que el método de la petición es DELETE
       });
 
-      const data = await response.json();
-      console.log("Producto eliminado:", data);
+      const data = await response.json(); // convertimos la respuesta a JSON
+      console.log("Producto eliminado:", data);  // mostramos la respuesta de la API, que suele ser un mensaje de confirmación o el producto eliminado
     }
 
     // ================= COMANDO INVALIDO =================
     else {
-      console.log("Comando no reconocido");
+      console.log("Comando no reconocido"); // si el método no es GET, POST o DELETE, mostramos un mensaje de error
     }
 
     // ===== FINALIZA LOGICA PRINCIPAL =====
 
-  } catch (error) {
-    console.error("Error:", error.message);
+  } catch (error) {   // si ocurre un error en cualquier parte del código dentro del try, lo capturamos aquí
+    console.error("Error:", error.message);   
   }
 }
 

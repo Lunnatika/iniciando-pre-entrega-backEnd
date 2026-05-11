@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/Lunnatika/Pre-entrega/issues"
   },
-  "homepage": "https://github.com/Lunnatika/Pre-entrega#readme"
+  "homepage": "https://github.com/Lunnatika/Pre-entrega#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
 }

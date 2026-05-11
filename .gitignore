@@ -1,1 +1,71 @@
-node_modules/
+# =========================================
+# ARCHIVO .gitignore
+# =========================================
+# Este archivo le indica a Git qué archivos
+# o carpetas NO debe subir al repositorio.
+#
+# Sirve para evitar subir:
+# - dependencias
+# - archivos temporales
+# - claves privadas
+# - configuraciones locales
+# - archivos pesados innecesarios
+# =========================================
+
+
+# =========================================
+# NODE MODULES
+# =========================================
+# Carpeta donde npm instala dependencias.
+# NO debe subirse porque puede regenerarse
+# usando:
+#
+# npm install
+# =========================================
+#node_modules/
+
+
+# =========================================
+# VARIABLES DE ENTORNO
+# =========================================
+# Contienen datos sensibles:
+# passwords, tokens, claves API, etc.
+# =========================================
+#.env
+
+
+# =========================================
+# ARCHIVOS LOG
+# =========================================
+# Archivos generados automáticamente
+# durante ejecuciones o errores.
+# =========================================
+#*.log
+
+
+# =========================================
+# CARPETAS DE BUILD / PRODUCCIÓN
+# =========================================
+# Archivos generados automáticamente
+# al compilar o construir el proyecto.
+# =========================================
+#dist/
+#build/
+
+
+# =========================================
+# COBERTURA DE TESTS
+# =========================================
+#coverage/
+
+
+# =========================================
+# CONFIGURACIONES DEL SISTEMA
+# =========================================
+# Archivos generados por Windows o Mac.
+# =========================================
+#.DS_Store
+#Thumbs.db
+
+# Ignore node modules
+node_modules/ 
